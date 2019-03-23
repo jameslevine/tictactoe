@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <title>Tic Tac Toe Game</title>
+    <style>
+      .table {
+        border: 5px solid black;
+        padding: 30px;
+        margin-top: 10px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Tic Tac Toe</h1>
+    <button onclick=startX()>Start as X</button>
+    <button onclick=startO()>Start as O</button>
+    <button onclick=reset()>Reset</button>
+    <table class=table>
+    <tr class=table>
+    <td class=table id=col1row1 onclick=clickSquareA()></td>
+    <td class=table id=col2row1 onclick=clickSquareB()></td>
+    <td class=table id=col3row1 onclick=clickSquareC()></td>
+    </tr>
+    <tr>
+    <td class=table id=col1row2 onclick=clickSquareD()></td>
+    <td class=table id=col2row2 onclick=clickSquareE()></td>
+    <td class=table id=col3row2 onclick=clickSquareF()></td>
+    </tr>
+    <tr>
+    <td class=table id=col1row3 onclick=clickSquareG()></td>
+    <td class=table id=col2row3 onclick=clickSquareH()></td>
+    <td class=table id=col3row3 onclick=clickSquareI()></td>
+    </tr>
+    </table>
+  </body>
+  <script>
+
+var a = document.getElementById("col1row1");
+var b = document.getElementById("col2row1");
+var c = document.getElementById("col3row1");
+var d = document.getElementById("col1row2");
+var e = document.getElementById("col2row2");
+var f = document.getElementById("col3row2");
+var g = document.getElementById("col1row3");
+var h = document.getElementById("col2row3");
+var i = document.getElementById("col3row3");
+
+var board = [a, b, c, d, e, f, g, h, i]
+
+var arr = [];
+console.log(arr);
+var nextGoX;
+var nextGoO;
+
+function startO() {
+  arr.push("X");
+  nextGoX = true;
+  console.log(arr);
+}
+
+function startX() {
+  arr.push("O");
+  nextGoX = true;
+  console.log(arr);
+}
+
+function clickSquareA() {
+  if (arr.length === 0) {
+  alert("Choose X or O!");
+  } else if (arr[arr.length-1] === "X") {
+  a.innerHTML = "O";
+  arr.push("O");
+  } else if (arr[arr.length-1] === "O") {
+  a.innerHTML = "X";
+  arr.push("X");
+  }
+  checkLineX();
+  checkLineO();
+  oppositionX()
+  console.log(arr);
+  console.log(arr[arr.length-1]);
+}
+
+function clickSquareB() {
+  if (arr.length === 0) {
+  alert("Choose X or O!");
+  } else if (arr[arr.length-1] === "X") {
+  b.innerHTML = "O";
+  arr.push("O");
+  } else if (arr[arr.length-1] === "O") {
+  b.innerHTML = "X";
+  arr.push("X");
+  console.log(arr);
+  }
+  checkLineX();
+  checkLineO();
+  oppositionX()
+}
+
+function clickSquareC() {
+  if (arr.length === 0) {
+  alert("Choose X or O!");
+  } else if (arr[arr.length-1] === "X") {
+  c.innerHTML = "O";
+  arr.push("O");
+  } else if (arr[arr.length-1] === "O") {
+  c.innerHTML = "X";
+  arr.push("X");
+  }
+  checkLineX();
+  checkLineO();
+  console.log(arr);
+}
+
+function clickSquareD() {
+  if (arr.length === 0) {
+  alert("Choose X or O!");
+  } else if (arr[arr.length-1] === "X") {
+  d.innerHTML = "O";
+  arr.push("O");
+  } else if (arr[arr.length-1] === "O") {
+  d.innerHTML = "X";
+  arr.push("X");
+  }
+  checkLineX();
+  checkLineO();
+  console.log(arr);
+}
+
+function clickSquareE() {
+  if (arr.length === 0) {
+  alert("Choose X or O!");
+  } else if (arr[arr.length-1] === "X") {
+  e.innerHTML = "O";
+  arr.push("O");
+  } else if (arr[arr.length-1] === "O") {
+  e.innerHTML = "X";
+  arr.push("X");
+  }
+  checkLineX();
+  checkLineO();
+  console.log(arr);
+}
+
+function clickSquareF() {
+  if (arr.length === 0) {
+  alert("Choose X or O!");
+  } else if (arr[arr.length-1] === "X") {
+  f.innerHTML = "O";
+  arr.push("O");
+  } else if (arr[arr.length-1] === "O") {
+  f.innerHTML = "X";
+  arr.push("X");
+  }
+  checkLineX();
+  checkLineO();
+  console.log(arr);
+}
+
+function clickSquareG() {
+  if (arr.length === 0) {
+  alert("Choose X or O!");
+  } else if (arr[arr.length-1] === "X") {
+  g.innerHTML = "O";
+  arr.push("O");
+  } else if (arr[arr.length-1] === "O") {
+  g.innerHTML = "X";
+  arr.push("X");
+  }
+  checkLineX();
+  checkLineO();
+  console.log(arr);
+}
+
+function clickSquareH() {
+  if (arr.length === 0) {
+  alert("Choose X or O!");
+  } else if (arr[arr.length-1] === "X") {
+  h.innerHTML = "O";
+  arr.push("O");
+  } else if (arr[arr.length-1] === "O") {
+  h.innerHTML = "X";
+  arr.push("X");
+  }
+  checkLineX();
+  checkLineO();
+  console.log(arr);
+}
+
+function clickSquareI() {
+  if (arr.length === 0) {
+  alert("Choose X or O!");
+  } else if (arr[arr.length-1] === "X") {
+  i.innerHTML = "O";
+  arr.push("O");
+  } else if (arr[arr.length-1] === "O") {
+  i.innerHTML = "X";
+  arr.push("X");
+  }
+  checkLineX();
+  checkLineO();
+  console.log(arr);
+}
+
+function reset() {
+  location.reload();
+  // a.innerHTML = "";
+  // b.innerHTML = "";
+  // c.innerHTML = "";
+  // d.innerHTML = "";
+  // e.innerHTML = "";
+  // f.innerHTML = "";
+  // g.innerHTML = "";
+  // h.innerHTML = "";
+  // i.innerHTML = "";
+}
+
+function checkLineX() {
+  if (a.innerHTML === "X" && b.innerHTML === "X" && c.innerHTML === "X") {
+    alert("X Won");
+  } else if (d.innerHTML === "X" && e.innerHTML === "X" && f.innerHTML === "X") {
+    alert("X Won");
+  } else if (g.innerHTML === "X" && h.innerHTML === "X" && i.innerHTML === "X") {
+    alert("X Won");
+  } else if (a.innerHTML === "X" && e.innerHTML === "X" && i.innerHTML === "X") {
+    alert("X Won");
+  } else if (c.innerHTML === "X" && e.innerHTML === "X" && g.innerHTML === "X") {
+    alert("X Won");
+  } else if (b.innerHTML === "X" && e.innerHTML === "X" && h.innerHTML === "X") {
+    alert("X Won");
+  } else if (c.innerHTML === "X" && f.innerHTML === "X" && i.innerHTML === "X") {
+    alert("X Won");
+  } else if (a.innerHTML === "X" && d.innerHTML === "X" && g.innerHTML === "X") {
+    alert("X Won");
+  }
+}
+
+function checkLineO() {
+  if (a.innerHTML === "O" && b.innerHTML === "O" && c.innerHTML === "O") {
+    alert("O Won");
+  } else if (d.innerHTML === "O" && e.innerHTML === "O" && f.innerHTML === "O") {
+    alert("O Won");
+  } else if (g.innerHTML === "O" && h.innerHTML === "O" && i.innerHTML === "O") {
+    alert("O Won");
+  } else if (a.innerHTML === "O" && e.innerHTML === "O" && i.innerHTML === "O") {
+    alert("O Won");
+  } else if (c.innerHTML === "O" && e.innerHTML === "O" && g.innerHTML === "O") {
+    alert("O Won");
+  } else if (b.innerHTML === "O" && e.innerHTML === "O" && h.innerHTML === "O") {
+    alert("O Won");
+  } else if (c.innerHTML === "O" && f.innerHTML === "O" && i.innerHTML === "O") {
+    alert("O Won");
+  } else if (a.innerHTML === "O" && d.innerHTML === "O" && g.innerHTML === "O") {
+    alert("O Won");
+  }
+}
+
+function availability() {
+
+}
+
+function oppositionX() {
+  var str = "abcdefghi";
+  var arr = str.split("");
+  var finalArr = [];
+  var randomLetter = arr[Math.floor(Math.random() * str.length)];
+  arr.forEach(function(element) {
+    if (element.innerHTML === "X" || element.innerHTML === "O") {
+    finalArr.push(element);
+    console.log(finalArr);
+    }
+  })
+  console.log(finalArr);
+}
+
+  </script>
+</html>
